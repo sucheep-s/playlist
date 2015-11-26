@@ -8,7 +8,7 @@ exports.register = function(server, options, next) {
             path: '/api/playlists',
             handler: function (request, reply) {
 
-              Playlist.find({ 'isDelete': 0 }).populate('medias').exec(function(err, playlists){
+              Playlist.find({ 'isDelete': 0 }).populate('medias', null, {'isDelete':0}).exec(function(err, playlists){
                     if(err){
                         reply({status : 'error'});
                     }else{
