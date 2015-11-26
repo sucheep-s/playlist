@@ -7,7 +7,7 @@ exports.register = function(server, options, next) {
           method: 'GET',
           path: '/api/medias',
           handler: function (request, reply) {
-            Media.find({}, function(err, medias){
+            Media.find({ 'isDelete': 0 }, function(err, medias){
                   if(err){
                       reply({status : 'error'});
                   }else{

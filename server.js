@@ -2,7 +2,7 @@ var Hapi = require('hapi');
 var Mongoose = require('mongoose');
 
 var server = new Hapi.Server();
-server.connection({ port : 80, routes: { cors: true } });
+server.connection({ port : 81, routes: { cors: true } });
 
 Mongoose.connect('mongodb://localhost/playlist', function(err){
 	if(err){
